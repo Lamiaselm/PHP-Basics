@@ -1,0 +1,45 @@
+[{
+    "nom":"Bureautique",
+    "volume":"60",
+    "taxe":"17",
+    "ht":"2000",
+    "ttc":"23400"
+},
+{
+    "nom":"Infogrqphie",
+    "volume":"60",
+    "taxe":"17",
+    "ht":"2000",
+    "ttc":"23400"
+},
+{
+    "nom":"Langues",
+    "volume":"120",
+    "taxe":"0",
+    "ht":"30000",
+    "ttc":"30000"
+},
+{
+    "nom":"Managment",
+    "volume":"90",
+    "taxe":"19",
+    "ht":"25000",
+    "ttc":"30000"
+}
+,
+{
+    "nom":"Managment JAVA",
+    "volume":"90",
+    "taxe":"19",
+    "ht":"25000",
+    "ttc":"30000"
+}
+
+
+
+]
+
+
+
+
+

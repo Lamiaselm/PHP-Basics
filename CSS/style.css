@@ -1,0 +1,154 @@
+html{
+    border-style: dotted;
+    border-color: blue;
+    margin:20px;
+}
+.title1{
+    text-align: center;
+    font-family: fantasy;
+    font-size: 50px;
+    font-weight: bold;
+}
+.couverture {
+    height: 100%;
+    width: 100%;
+}
+
+.detail{
+    width: 100%;
+    background-color: rgb(240, 240, 209);
+}
+
+table{
+    align-items: center;
+     margin: 0 auto;
+     border-collapse: none;
+}
+.video{
+    display: flex;
+    justify-content: center;
+}
+.contact{
+    margin-left: 10px;
+}
+
+.colonne1{
+
+    background-color:#dbd8d8;
+}
+.ligne1{
+    
+    background-color:#dbd8d8 !important;
+}   
+td{
+    border-style: dotted;
+    border-collapse: none;
+}
+tr:nth-child(2n+1) { 
+    background-color: #13caeb; 
+} 
+
+tr:nth-child(2n) { 
+    background-color: green; 
+} 
+.menu{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+   
+}
+.menu ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+    align-items: center;
+ }
+.menu li{
+    display: block;
+    list-style-type: none;
+    padding: 20px;
+    font-size: 17px;
+    margin: 0px 10px 0px 0px;
+    width: 200px;
+    text-align: center;
+    background-color: #51e0e0;
+}
+.menu li > a{
+    text-decoration: none;
+    color: black;
+}
+.menu li:hover{
+    background-color: #ff9a15;
+ 
+}
+.list-item{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    margin-top: 1em !important;
+    display: none;
+    margin-left: -20px !important;
+    width: 200px !important;
+
+}
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+/***************************************DIAPORAMA SLIDESHOW SECTOON*************************************************/
+.slide-img{
+    height: 500%;
+    width: 100%;
+}
+.slider{
+ 
+    animation: slide-animation 30s infinite ;
+}
+.slider:hover {
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -o-animation-play-state:paused;
+    animation-play-state:paused;  
+}
+
+.slides{
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+@keyframes slide-animation
+{
+   0%{
+       transform: translateY(0);
+   }
+   33%{
+    transform: translateY(-600px);
+   }
+   66%{
+    transform: translateY(-1850px);
+   }
+   100%{
+    transform: translateY(0);
+   }
+}
+#form{
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+.form-item{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
