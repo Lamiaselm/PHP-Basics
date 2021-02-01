@@ -152,3 +152,13 @@ ul li ul:hover {
     margin-bottom: 10px;
     margin-top: 10px;
 }
+#logout{
+    float:right;
+    width: 100px;
+    height: 45px;
+    background-color: #ff9a15;
+    color: beige;
+    font-size: 14px;
+    margin-top: -90px;
+    border: none;
+}
