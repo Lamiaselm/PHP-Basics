@@ -22,22 +22,7 @@ if(!isset($_SESSION["id"])) {
 <body>
 <h1 class="title1" > <i>Ecole de formation TDW</i> </h1>
 <form action="Logout.php"><button id="logout">Log out</button></form> 
-<div class="slides">
-<div class="slider">
-    <div class="slider-img" style="padding: 2% 5%;">
-        <img class="slide-img" src="assets/22702.jpg" alt="" >
-    </div>
-    <div class="slider-img"style="padding: 0% 5% 2% 5%;">
-        <img class="slide-img" src="assets/29476.jpg" alt="" >
-    </div>
-    <div class="slider-img"style="padding: 0% 5% 2% 5%;">
-        <img class="slide-img" src="assets/29493.jpg" alt="">
-    </div>
-    <div class="slider-img"style="padding: 0% 5% 2% 5%;">
-        <img class="slide-img" src="assets/17885.jpg" alt="">
-    </div>
-</div>
-</div>
+
 <div class="detail">
     <p>TDW est une école de formation offrant diverses formations profesionelles dans les domaines informatique, finance et langues</p>
 </div>
@@ -91,7 +76,7 @@ if(!isset($_SESSION["id"])) {
     <input  value="" name="ht" id="ht">
 </label>
 <label class="form-item">
-    <input type="submit" id="button">submit</input>
+    <input type="submit" id="button" name="submit"></input>
 </label>
 
 </form>
@@ -99,14 +84,9 @@ if(!isset($_SESSION["id"])) {
 <?php 
 if (isset($_POST['submit'])) {
     $nom= $_POST['nom'];
-    $volume =$_Post['volume'];
-    $taxe=$_POST['taxe'];
-    $ht=$_POST['ht'];
-    $TTC=($_POST['ht'])*1.196;
-    $query="INSERT INTO  (name,email,mobile)
-    VALUES ('$name','$email','$mobile')";
-
-
+    $query="INSERT INTO type_formation (Nom_type_formation)
+    VALUES ('$nom')";
+    $result=mysqli_query($db,$query);
 }
 
 
