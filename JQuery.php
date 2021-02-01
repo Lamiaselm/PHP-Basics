@@ -1,8 +1,9 @@
 <?php 
- session_start();
+require "connexion.php";
+session_start();
 if(!isset($_SESSION["id"])) {
    
-    echo "error";
+    header("Location:Login.html");
     }
     else{
 
@@ -75,7 +76,8 @@ if(!isset($_SESSION["id"])) {
 </ul>
 
 </div>
-<form action="" id="form">
+<h2 class="title1">Ajouter formation</h2>
+<form action="JQuery.php" id="form" method="POST">
 <label class="form-item">Entrez le nom de la formation
     <input  value="" name="nom" id="nom">
 </label>
@@ -89,10 +91,27 @@ if(!isset($_SESSION["id"])) {
     <input  value="" name="ht" id="ht">
 </label>
 <label class="form-item">
-    <button type="button" id="button">Valider</button>
+    <input type="submit" id="button">submit</input>
 </label>
 
 </form>
+
+<?php 
+if (isset($_POST['submit'])) {
+    $nom= $_POST['nom'];
+    $volume =$_Post['volume'];
+    $taxe=$_POST['taxe'];
+    $ht=$_POST['ht'];
+    $TTC=($_POST['ht'])*1.196;
+    $query="INSERT INTO  (name,email,mobile)
+    VALUES ('$name','$email','$mobile')";
+
+
+}
+
+
+
+?>
 
 <h2 class="title1">Liste des tarifs</h2>
 <table id="table">
