@@ -1,5 +1,5 @@
 <?php 
-include "connexion.php";
+require "connexion.php";
 
     session_start();
 
@@ -9,18 +9,19 @@ include "connexion.php";
     $email= $_POST['email'];
     $sql = "SELECT id_user FROM utilisateur WHERE name_user = '$email' and hash_pwd = '$pwd'";
     $result = mysqli_query($db,$sql);
-    $row= $result->fetch_assoc();
+    $row  = mysqli_fetch_assoc($result);
     $count = mysqli_num_rows($result);
-    if($count == 1) {
-       $_SESSION['loggedin'] = TRUE;
-       $_SESSION['id'] = $row['id_user'];
-       $_SESSION['email'] = $row['name_user'];
-
-    }else {
-        header("location: Login.html");
+    if($count==1) {
+    $_SESSION["id"] = $row['id_user'];
+    echo $_SESSION["id"];
+    $_SESSION["name"] = $row['name_user'];
+    print_r ($_SESSION["id"]);
+    } else {
+    $message = "Invalid Username or Password!";
+    header("location: Login.html");
     }
     if(isset($_SESSION["id"])) {
-        header("Location:JQuery.html");
+        header("Location:JQuery.php");
         }
     mysqli_close($db);
 

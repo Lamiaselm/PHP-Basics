@@ -1,3 +1,13 @@
+<?php 
+ session_start();
+if(!isset($_SESSION["id"])) {
+   
+    echo "error";
+    }
+    else{
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,3 +169,4 @@
 
 </script>
 </html>
+<?php } ?>
