@@ -1,8 +1,8 @@
 <?php 
 include "connexion.php";
-  if(!isset($_SESSION)) {
+
     session_start();
-}
+
 
 
     $pwd=hash("md5",$_POST['pwd']);
@@ -13,12 +13,15 @@ include "connexion.php";
     $count = mysqli_num_rows($result);
     if($count == 1) {
        $_SESSION['loggedin'] = TRUE;
-       $_SESSION['id'] = $row['id'];
-       header("location: JQuery.html");
-       exit();
+       $_SESSION['id'] = $row['id_user'];
+       $_SESSION['email'] = $row['name_user'];
 
     }else {
         header("location: Login.html");
     }
+    if(isset($_SESSION["id"])) {
+        header("Location:JQuery.html");
+        }
     mysqli_close($db);
+
 ?>
