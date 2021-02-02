@@ -84,10 +84,22 @@ if(!isset($_SESSION["id"])) {
 <?php 
 if (isset($_POST['submit'])) {
     $nom= $_POST['nom'];
-    $query="INSERT INTO type_formation (Nom_type_formation)
+    $query1="INSERT INTO type_formation (Nom_type_formation)
     VALUES ('$nom')";
-    $result=mysqli_query($db,$query);
+    $result1=mysqli_query($db,$query);
+    $row  = mysqli_fetch_assoc($result1);
+
 }
+
+
+
+?>
+<h2 class="title1">Liste des formations </h2>
+<?php 
+  
+
+
+
 
 
 
@@ -138,11 +150,7 @@ if (isset($_POST['submit'])) {
 
     </tbody>
 </table>
-<h2 class="title1">Formations TDW teaser</h2>
-<div class="video">
-<video src="assets/Démonstration objectifs CSS.mp4" height="300px" width="600px" preload="auto" controls autoplay></video>
-</div>
-<p class="contact">Pour plus d'information contactez nous par email <a href="#">contact</a></p>
+
 </body>
 <script>
     $(document).ready(function(){
