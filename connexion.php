@@ -5,7 +5,7 @@
    define('DB_DATABASE', 'tdw_php');
    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
    if($db){
-       echo "done";
+      // echo "done";
    }else {echo "not done";}
 
 

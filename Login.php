@@ -20,7 +20,7 @@ require "connexion.php";
     }
 
     if(isset($_SESSION["id"])) {
-        header("Location:JQuery.php");
+        header("Location:Admin.php");
         }
     mysqli_close($db);
 

@@ -30,44 +30,6 @@ $(document).ready(function(){
 <h1 class="title1" > <i>Ecole de formation TDW</i> </h1>
 <form action="Logout.php"><button id="logout">Log out</button></form> 
 
-<div class="detail">
-    <p>TDW est une école de formation offrant diverses formations profesionelles dans les domaines informatique, finance et langues</p>
-</div>
-
-<div class="menu" id="nav">
-<ul id="ul">
-    <li><a href="#">Bureautique</a>
-        <ul class="list-item">
-            <li>MS Word</li>
-            <li>Excel</li>
-            <li>LateX</li>
-        </ul>
-    </li>
-
-    <li><a href="#">Infographie</a>
-        <ul class="list-item">
-            <li>Photoshop</li>
-            <li>Illustrator</li>
-        </ul>
-    </li>
-    <li><a href="#">langues</a>
-        <ul class="list-item">
-            <li>Anglais</li>
-            <li>Turque</li>
-            <li>Chinois</li>
-        </ul>
-    </li>
-    <li><a href="#">Management</a>
-        <ul class="list-item">
-            <li>Marketing</li>
-            <li>Comptabilité</li>
-            <li>finance</li>
-            <li>Gestion de droit</li>
-        </ul>
-    </li>
-</ul>
-
-</div>
 <?php 
 if (isset($_POST['submit'])) {
     $nom= $_POST['nom'];
@@ -119,37 +81,36 @@ if (isset($_POST['submit'])) {
             <td class='colonne1'>Volume Horraire(H)</td>
             <td class='colonne1'>Taxe(%)</td>
             <td class='colonne1'>Prix HT(DA)</td>
+            <td class='colonne1'>Delete</td>
         </tr>
 <?php 
   
-  $query5="SELECT * FROM formation ";
+  $query5="SELECT * FROM formation ORDER BY Nom_formation";
   $result5=mysqli_query($db,$query5);
   if($result5)
-  {
-    while ($row = $result5->fetch_assoc())
+  { 
+    while ( $row = $result5->fetch_assoc())
     {
+        
     echo "
-    
-
         <tr>
             <td  class='colonne1'>".$row['Nom_formation']."</td>
             <td  class='ligne1'>".$row['volume']."</td>
             <td  class='ligne1'>".$row['tarif']."</td>
             <td  class='ligne1'>".$row['taxe']."</td>
+            <td  class='ligne1'><a href=\"delete.php?id_formation=".$row['Id_formation']."\">Delete</a></td>
         </tr>
-
-    
-    
     ";
     }
   }
+
 ?>
 
     </tbody>
 </table>
 <button  class="ajouter" >Ajouter</button>
 <div style="display:none;" id="hide-form">
-<form action="JQuery.php" id="form" method="POST">
+<form action="Admin.php" id="form" method="POST">
 <label class="form-item">Entrez le nom de la formation
     <input  value="" name="nom" id="nom">
 </label>
