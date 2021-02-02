@@ -75,6 +75,17 @@ if(!isset($_SESSION["id"])) {
 <label class="form-item">Entrez le prix HT
     <input  value="" name="ht" id="ht">
 </label>
+<label class="form-item">Choisissez un type de formation : 
+<select name="type" id="type">
+<option value=""> ----- Choisir ----- </option>
+  <option value="1">Bureatique</option>
+  <option value="2">Infographie</option>
+  <option value="3">Langues</option>
+  <option value="4">Managment</option>
+  <option value="5">Comptabilitét</option>
+  <option value="6">Autre</option>
+</select>
+</label>
 <label class="form-item">
     <input type="submit" id="button" name="submit"></input>
 </label>
@@ -84,10 +95,40 @@ if(!isset($_SESSION["id"])) {
 <?php 
 if (isset($_POST['submit'])) {
     $nom= $_POST['nom'];
-    $query1="INSERT INTO type_formation (Nom_type_formation)
-    VALUES ('$nom')";
-    $result1=mysqli_query($db,$query);
-    $row  = mysqli_fetch_assoc($result1);
+    $type=$_POST['type'];
+    $volume=$_POST['volume'];
+    $tarif=$_POST['ht'];
+    $taxe=$_POST['taxe'];
+  
+    if($type==6) 
+    {
+        $query1="INSERT INTO type_formation (Nom_type_formation)VALUES ('$nom')";
+        if ($result1=mysqli_query($db,$query1))
+        {   
+            $query2="SELECT id_type_formation FROM type_formation WHERE Nom_type_formation='$nom'";
+            $result2=mysqli_query($db,$query2);
+             while ($row = $result2->fetch_assoc()){
+                $id_formation=$row['id_type_formation'];
+               
+                $query3="INSERT INTO formation (id_type_formation,Nom_formation,volume,tarif,taxe) VALUES ('$id_formation','$nom','$volume','$tarif','$taxe')";
+                if ($result3=mysqli_query($db,$query3))
+                {
+                   
+                }
+             } 
+        }
+
+    }
+    else
+    
+    {
+        $query4="INSERT INTO formation (id_type_formation,Nom_formation,volume,tarif,taxe) VALUES ('$type','$nom','$volume','$tarif','$taxe')";
+        if ($result4=mysqli_query($db,$query4))
+        {
+            echo "donee2";
+        }
+    }
+
 
 }
 
@@ -95,61 +136,42 @@ if (isset($_POST['submit'])) {
 
 ?>
 <h2 class="title1">Liste des formations </h2>
+<table id='table'>
+    <tbody>
+        <tr  class='ligne1'>
+            <td class='colonne1'>Formations</td>
+            <td class='colonne1'>Volume Horraire(H)</td>
+            <td class='colonne1'>Taxe(%)</td>
+            <td class='colonne1'>Prix HT(DA)</td>
+        </tr>
 <?php 
   
+  $query5="SELECT * FROM formation ";
+  $result5=mysqli_query($db,$query5);
+  if($result5)
+  {
+    while ($row = $result5->fetch_assoc())
+    {
+    echo "
+    
 
+        <tr>
+            <td  class='colonne1'>".$row['Nom_formation']."</td>
+            <td  class='ligne1'>".$row['volume']."</td>
+            <td  class='ligne1'>".$row['tarif']."</td>
+            <td  class='ligne1'>".$row['taxe']."</td>
+        </tr>
 
-
-
-
-
+    
+    
+    ";
+    }
+  }
 ?>
-
-<h2 class="title1">Liste des tarifs</h2>
-<table id="table">
-    <tbody>
-        <tr  class="ligne1">
-            <td class="colonne1">Formations</td>
-            <td>Volume Horraire(H)</td>
-            <td>Taxe(%)</td>
-            <td>Prix HT(DA)</td>
-            <td>Prix TTC(DA)</td>
-        </tr>
-        <tr>
-            <td  class="colonne1">Bureautique</td>
-            <td rowspan="2" >60</td>
-            <td >17</td>
-            <td >20000</td>
-            <td >23400</td>
-        </tr>
-        <tr>
-            <td  class="colonne1">Infographie</td>
-            <td >17</td>
-            <td >20000</td>
-            <td >23400</td>
-        </tr>
-        <tr>
-            <td class="colonne1">Langues</td>
-            <td >120</td>
-            <td >0</td>
-            <td colspan="2" >30000</td>
-        </tr>
-        <tr>
-            <td class="colonne1">Management</td>
-            <td rowspan="2" >90</td>
-            <td >19</td>
-            <td >25000</td>
-            <td >30000</td>
-        </tr>
-        <tr>
-            <td class="colonne1">Comptabilité</td>
-            <td >19</td>
-            <td >25000</td>
-            <td >29750</td>
-        </tr>
-
     </tbody>
 </table>
+
+
 
 </body>
 <script>

@@ -22,7 +22,7 @@ html{
 table{
     align-items: center;
      margin: 0 auto;
-     border-collapse: none;
+     font-size: 16px;
 }
 .video{
     display: flex;
@@ -38,10 +38,11 @@ table{
 }
 .ligne1{
     
-    background-color:#dbd8d8 !important;
+    background-color:#ccf8b8 !important;
 }   
 td{
-    border-style: dotted;
+   
+    
     border-collapse: none;
 }
 tr:nth-child(2n+1) { 
