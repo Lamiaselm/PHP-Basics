@@ -19,6 +19,13 @@ if(!isset($_SESSION["id"])) {
     <title>JS</title>
  
 </head>
+<script>
+$(document).ready(function(){
+    $(".ajouter").click(function(){
+        $("#hide-form").css("display","block");
+    })
+})
+</script>
 <body>
 <h1 class="title1" > <i>Ecole de formation TDW</i> </h1>
 <form action="Logout.php"><button id="logout">Log out</button></form> 
@@ -61,37 +68,6 @@ if(!isset($_SESSION["id"])) {
 </ul>
 
 </div>
-<h2 class="title1">Ajouter formation</h2>
-<form action="JQuery.php" id="form" method="POST">
-<label class="form-item">Entrez le nom de la formation
-    <input  value="" name="nom" id="nom">
-</label>
-<label class="form-item">Entrez le Volume Horraire
-    <input  value="" name="volume"id="volume">
-</label>
-<label class="form-item">Entrez le Taxe
-    <input  value="" name="taxe" id="taxe">
-</label>
-<label class="form-item">Entrez le prix HT
-    <input  value="" name="ht" id="ht">
-</label>
-<label class="form-item">Choisissez un type de formation : 
-<select name="type" id="type">
-<option value=""> ----- Choisir ----- </option>
-  <option value="1">Bureatique</option>
-  <option value="2">Infographie</option>
-  <option value="3">Langues</option>
-  <option value="4">Managment</option>
-  <option value="5">Comptabilitét</option>
-  <option value="6">Autre</option>
-</select>
-</label>
-<label class="form-item">
-    <input type="submit" id="button" name="submit"></input>
-</label>
-
-</form>
-
 <?php 
 if (isset($_POST['submit'])) {
     $nom= $_POST['nom'];
@@ -168,10 +144,41 @@ if (isset($_POST['submit'])) {
     }
   }
 ?>
+
     </tbody>
 </table>
+<button  class="ajouter" >Ajouter</button>
+<div style="display:none;" id="hide-form">
+<form action="JQuery.php" id="form" method="POST">
+<label class="form-item">Entrez le nom de la formation
+    <input  value="" name="nom" id="nom">
+</label>
+<label class="form-item">Entrez le Volume Horraire
+    <input  value="" name="volume"id="volume">
+</label>
+<label class="form-item">Entrez le Taxe
+    <input  value="" name="taxe" id="taxe">
+</label>
+<label class="form-item">Entrez le prix HT
+    <input  value="" name="ht" id="ht">
+</label>
+<label class="form-item">Choisissez un type de formation : 
+<select name="type" id="type">
+<option value=""> ----- Choisir ----- </option>
+  <option value="1">Bureatique</option>
+  <option value="2">Infographie</option>
+  <option value="3">Langues</option>
+  <option value="4">Managment</option>
+  <option value="5">Comptabilitét</option>
+  <option value="6">Autre</option>
+</select>
+</label>
+<label class="form-item">
+    <input type="submit" id="button" name="submit"></input>
+</label>
 
-
+</form>
+</div>
 
 </body>
 <script>

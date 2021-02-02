@@ -147,6 +147,7 @@ ul li ul:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
    
 }
 .form-item{
@@ -163,4 +164,17 @@ ul li ul:hover {
     font-size: 14px;
     margin-top: -90px;
     border: none;
+}
+.ajouter{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    padding: 5px 20px;
+    background-color: #ff9a15;
+    color: beige;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
 }
