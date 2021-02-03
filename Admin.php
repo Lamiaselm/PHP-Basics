@@ -77,10 +77,12 @@ if (isset($_POST['submit'])) {
 <table id='table'>
     <tbody>
         <tr  class='ligne1'>
+           
             <td class='colonne1'>Formations</td>
             <td class='colonne1'>Volume Horraire(H)</td>
             <td class='colonne1'>Taxe(%)</td>
             <td class='colonne1'>Prix HT(DA)</td>
+            <td class='colonne1'>Modifier</td>
             <td class='colonne1'>Delete</td>
         </tr>
 <?php 
@@ -94,11 +96,14 @@ if (isset($_POST['submit'])) {
         
     echo "
         <tr>
-            <td  class='colonne1'>".$row['Nom_formation']."</td>
-            <td  class='ligne1'>".$row['volume']."</td>
-            <td  class='ligne1'>".$row['tarif']."</td>
-            <td  class='ligne1'>".$row['taxe']."</td>
-            <td  class='ligne1'><a href=\"delete.php?id_formation=".$row['Id_formation']."\">Delete</a></td>
+        <form action='Modifier.php'  method='POST'>
+            <td  class='ligne1'><input class='modifier' name='nom' value=".$row['Nom_formation']."></td>
+            <td  class='ligne1'><input class='modifier' name='volume' value=".$row['volume']."></td>
+            <td  class='ligne1'><input class='modifier' name='tarif' value=".$row['tarif']."></td>
+            <td  class='ligne1'><input class='modifier' name='taxe' value=".$row['taxe']."></td>
+            <td  class='ligne1'><input type='submit' value='Modifier'><input type='hidden' name='id_formation' value=".$row['Id_formation']."></td>
+            <td  class='ligne1'><a href=\"Delete.php?id_formation=".$row['Id_formation']."\">Delete</a></td>
+            </form>
         </tr>
     ";
     }

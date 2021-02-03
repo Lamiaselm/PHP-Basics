@@ -177,3 +177,7 @@ ul li ul:hover {
     border: none;
     border-radius: 3px;
 }
+.modifier{
+    border: none;
+    outline: none;
+}
