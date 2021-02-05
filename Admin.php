@@ -16,7 +16,7 @@ if(!isset($_SESSION["id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <script src="Js/jquery-1.8.2.min.js"></script>
-    <title>JS</title>
+    <title>Gestion des formations</title>
  
 </head>
 <script>
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
         $query4="INSERT INTO formation (id_type_formation,Nom_formation,volume,tarif,taxe) VALUES ('$type','$nom','$volume','$tarif','$taxe')";
         if ($result4=mysqli_query($db,$query4))
         {
-            echo "donee2";
+           
         }
     }
 

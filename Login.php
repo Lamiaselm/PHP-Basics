@@ -13,6 +13,8 @@ require "connexion.php";
     if($count==1) {
     $_SESSION["id"] = $row['id_user'];
     $_SESSION["name"] = $row['name_user'];
+    $_SESSION["LoggedIn"] = TRUE;
+
 
     } else {
     $message = "Invalid Username or Password!";
