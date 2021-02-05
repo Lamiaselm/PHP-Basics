@@ -80,8 +80,8 @@ if (isset($_POST['submit'])) {
            
             <td class='colonne1'>Formations</td>
             <td class='colonne1'>Volume Horraire(H)</td>
-            <td class='colonne1'>Taxe(%)</td>
-            <td class='colonne1'>Prix HT(DA)</td>
+            <td class='colonne1'>Taxe</td>
+            <td class='colonne1'>Tarif</td>
             <td class='colonne1'>Modifier</td>
             <td class='colonne1'>Delete</td>
         </tr>

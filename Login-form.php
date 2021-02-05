@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if ($_SESSION["LoggedIn"])
+if (isset($_SESSION["LoggedIn"]))
 {
     header("Location:Admin.php");
 }
