@@ -3,6 +3,10 @@ session_start();
 if ($_SESSION["LoggedIn"]){
     header("Location:Admin.php");
 }
-session_destroy();
-header("Location:Login.html");
+else {
+    $_SESSION["LoggedIn"]=FALSE;
+    session_destroy();
+    header("Location:Login-form.php");
+}
+
 ?>

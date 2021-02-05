@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+if ($_SESSION["LoggedIn"])
+{
+    header("Location:Admin.php");
+}
+else {
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,3 +41,4 @@
 
 </body>
 </html>
+<?php } ?>

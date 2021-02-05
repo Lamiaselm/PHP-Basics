@@ -18,7 +18,7 @@ require "connexion.php";
 
     } else {
     $message = "Invalid Username or Password!";
-    header("location: Login.html");
+    header("location: Login-form.php");
     }
 
     if(isset($_SESSION["id"])) {
