@@ -10,5 +10,6 @@ if($result6)
  echo "delete success";
 }
 header("Location:Admin.php");
+mysqli_close($db);
 
 ?> 

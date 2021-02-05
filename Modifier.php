@@ -17,6 +17,6 @@ if($result6)
 {
  echo "modifier success";
 }else echo "error";
-
 header("Location:Admin.php");
+mysqli_close($db);
 ?> 
