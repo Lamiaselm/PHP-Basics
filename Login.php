@@ -4,6 +4,7 @@ require "connexion.php";
     session_start();
 
     $pwd=hash("md5",$_POST['pwd']);
+    echo $pwd;
     $email= $_POST['email'];
     $sql = "SELECT id_user FROM utilisateur WHERE name_user = '$email' and hash_pwd = '$pwd'";
     $result = mysqli_query($db,$sql);
@@ -17,7 +18,7 @@ require "connexion.php";
 
 
     } else {
-    $message = "Invalid Username or Password!";
+    echo "Invalid Username or Password!";
     header("location: Login-form.php");
     }
 

@@ -27,7 +27,7 @@ else {
     <form action="Login.php" method="POST">
         <div class="form-item">
         <label>Email    </label>
-        <input type="email" name="email" placeholder="Entrez votre email">
+        <input type="text" name="email" placeholder="Entrez votre email">
         </div>
         <div class="form-item">
         <label>Mot de passe     </label>
